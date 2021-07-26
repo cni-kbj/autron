@@ -1,4 +1,4 @@
-﻿// const_cast : 
+// const_cast : 
 
 int main()
 {
@@ -15,5 +15,6 @@ int main()
 	int* p4 = const_cast<int*>(&c); // ok.. 동일 타입의 상수성 제거
 									// const int* =>int*
 
+	// 마지막 으로 "dynamic_cast" 가 있는데.. 상속을 알아야 합니다.(상속 배울때 설명)
 
 }

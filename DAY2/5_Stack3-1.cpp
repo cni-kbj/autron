@@ -1,27 +1,27 @@
 #include <iostream>
 
-// Âü°í. ±¸Á¶Ã¼ ¾È¿¡ ÇÔ¼ö°¡ ÀÖ´Â ¿ø¸®´Â ¹º°¡¿ä ??
-//       Á¤È®ÇÑ µ¿ÀÛ ¿ø¸®!!
+// ì°¸ê³ . êµ¬ì¡°ì²´ ì•ˆì— í•¨ìˆ˜ê°€ ìžˆëŠ” ì›ë¦¬ëŠ” ë­”ê°€ìš” ??
+//       ì •í™•í•œ ë™ìž‘ ì›ë¦¬!!
 
 struct Stack
 {
 	int buff[10];
 	int idx;
-	// ¾Æ·¡ 2°³ÀÇ ¸â¹ö ÇÔ¼ö´Â °á±¹ ÄÄÆÄÀÏ µÇ¸é ÀÎÀÚ°¡ Ãß°¡µË´Ï´Ù.
+	// ì•„ëž˜ 2ê°œì˜ ë©¤ë²„ í•¨ìˆ˜ëŠ” ê²°êµ­ ì»´íŒŒì¼ ë˜ë©´ ì¸ìžê°€ ì¶”ê°€ë©ë‹ˆë‹¤.
 	//void push(int n) { buff[idx++] = n; }
 	//int pop() { return buff[--idx]; }
 };
-// ÄÄÆÄÀÏ·¯°¡ À§ ÄÚµå¸¦ ¾Æ·¡ Ã³·³ º¯°æ
+// ì»´íŒŒì¼ëŸ¬ê°€ ìœ„ ì½”ë“œë¥¼ ì•„ëž˜ ì²˜ëŸ¼ ë³€ê²½
 void push(Stack* s, int n) { s->buff[(s->idx)++] = n; }
-int pop(Stack* s)          { return s->buff[--(s->idx)]; }
+int pop(Stack* s)          { return s->buff[--(s->idx)]; } //  s ë¥¼ ë³´í†µ "this"ë¼ê³  í•©ë‹ˆë‹¤.
 
 int main()
 {
-	Stack s1; // ¸â¹ö µ¥ÀÌÅ¸¸¸ "½ºÅÃ ¸Þ¸ð¸®"¿¡ ³õÀÔ´Ï´Ù.
+	Stack s1; // ë©¤ë²„ ë°ì´íƒ€ë§Œ "ìŠ¤íƒ ë©”ëª¨ë¦¬"ì— ë†“ìž…ë‹ˆë‹¤.
 	s1.idx = 0;
 
-	s1.push(10); // ÀÌ ÄÚµå´Â ÄÄÆÄÀÏ·¯°¡
-				 // push(&s1, 10) À¸·Î º¯°æÇÕ´Ï´Ù.
+	s1.push(10); // ì´ ì½”ë“œëŠ” ì»´íŒŒì¼ëŸ¬ê°€
+				 // push(&s1, 10) ìœ¼ë¡œ ë³€ê²½í•©ë‹ˆë‹¤.
 
 	std::cout << s1.pop() << std::endl;
 

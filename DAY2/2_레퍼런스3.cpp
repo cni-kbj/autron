@@ -40,3 +40,4 @@ void foo(int n) {}
 
 //   B. 인자가 user define type(UDT, 구조체/클래스) => const reference 가 좋습니다.
 void foo(const Point& pt) {}
+//void foo(Point pt) {} // <== C++ 코드에서는 이렇게 하는 것은 좋지 않습니다.

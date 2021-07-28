@@ -33,6 +33,8 @@ int main()
 	//							  ==> 그런데 이렇게 하면 cnt 가 일반 멤버인지 static 인지
 	//								  가독성이 좋지 않습니다.
 	//								  되도록이면 클래스 이름으로 접근하세요.!!
+	//								  java, C#, swift 등 대부분의 다른 언어는 "클래스이름" 으로만
+	//								  접근 가능합니다.
 	std::cout << Car::cnt << std::endl;  // 
 	std::cout << c1.cnt   << std::endl;  // 
 }

@@ -1,4 +1,4 @@
-// ¿¹Á¦1     152 page
+// ì˜ˆì œ1     152 page
 #include <iostream>
 #include <vector>
 
@@ -8,7 +8,7 @@ class Shape
 	int color;
 public:
 
-	int type; // µµÇüÀÇ Á¾·ù¸¦ °ü¸®ÇÒ ¸â¹ö º¯¼ö
+	int type; // ë„í˜•ì˜ ì¢…ë¥˜ë¥¼ ê´€ë¦¬í•  ë©¤ë²„ ë³€ìˆ˜
 
 	void setColor(int c) { color = c; }
 	int getColor() const { return color; }
@@ -63,12 +63,15 @@ int main()
 
 		else if (cmd == 8)
 		{
-			std::cout << "¸î¹øÂ° µµÇüÀ» º¹Á¦ÇÒ±î¿ä >> ";
+			std::cout << "ëª‡ë²ˆì§¸ ë„í˜•ì„ ë³µì œí• ê¹Œìš” >> ";
 
 			int k;
 			std::cin >> k;
 
-			// ¾Æ·¡ Ã³·³ Çß´Ù¸é ¾î¶³±î¿ä ?
+			// ì•„ë˜ ì²˜ëŸ¼ í–ˆë‹¤ë©´ ì–´ë–¨ê¹Œìš” ?
+			// => ìƒˆë¡œìš´ ë„í˜• ì¶”ê°€ì‹œ ì½”ë“œê°€ ìˆ˜ì •ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
+			//    OCPë¥¼ ë§Œì¡±í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
+			// switch ~ case, if else ëŠ” í•­ìƒ ìƒˆë¡œìš´ ìš”ì†Œ ì¶”ê°€ì‹œ ì½”ë“œ ìˆ˜ì •ë©ë‹ˆë‹¤.
 			switch (v[k]->type)
 			{
 			case 1: v.push_back(new Rect); break;

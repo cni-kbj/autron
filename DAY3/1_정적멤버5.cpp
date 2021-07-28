@@ -32,3 +32,19 @@ int main()
 {
 	std::cout << Car::getCount() << std::endl; /
 }
+
+// 현재..
+// 1. C보다 발전된 C++문법(함수, 변수등.., auto, template, overloading, new )
+
+// 2. stack 이 필요하면 "stack" 타입을 만들어서 사용하자. 
+//    타입을 만드는 문법 => "class 문법"
+//    A. 생성자/소멸자
+//    B. private/public
+//    C. 생성자에서 초기화 리스트
+//    D. static 멤버 데이타, 멤버 함수
+//    E. 상수 멤버 함수
+//    F. this
+
+// 3. 상속
+// 4. STL 사용법
+// 5. 예외, 연산자 재정의등의 기타 문법들.

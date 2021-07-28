@@ -22,7 +22,11 @@ public:
 	void setColor(int c) { color = c; }
 	int getColor() const { return color; }
 
+	// Shape 는 결국 기반 클래스이고 객체 생성할일이 없습니다.(new Rect, new Circle만 있고
+	//															new Shape는 없습니다.)
+	// 아래 처럼 구현이 있어야 하나요 ??
 	virtual void Draw() { std::cout << "Draw Shape" << std::endl; }
+//	virtual void Draw() = 0; // 최종적으로는 이렇게 되야 합니다(순수 가상함수와 추상클래스문법)
 };
 
 
@@ -58,6 +62,6 @@ int main()
 		}
 	}
 }
-// 왜 위 코드가 에러 일까요 ? 어디서 왜??
+// 왜 위 코드가 에러 일까요 ? 어디서 왜?? - 해결
 
 

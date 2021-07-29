@@ -9,39 +9,38 @@ namespace mystd
 		ostream& operator<<(double d)      { printf("%f", d); return *this; }
 		ostream& operator<<(const char* s) { printf("%s", s); return *this; }
 
-		// ÀÎÀÚ°¡ ÇÔ¼ö Æ÷ÀÎÅÍ ÀÎ ¹öÀü
+		// ì¸ìžê°€ í•¨ìˆ˜ í¬ì¸í„° ì¸ ë²„ì „
 		ostream& operator<<( mystd::ostream& (*f) (mystd::ostream&) )
 		{ 
-			f(*this); // ÀÌ°Ô ÀüºÎ ÀÔ´Ï´Ù. Àß »ý°¢ÇØ º¸¼¼¿ä.
+			f(*this); // ì´ê²Œ ì „ë¶€ ìž…ë‹ˆë‹¤. ìž˜ ìƒê°í•´ ë³´ì„¸ìš”.
 			return *this; 
 		}
 	};
 	ostream cout;
-}
-// endl Àº ¾Æ·¡ Ã³·³ µÇ¾î ÀÖ½À´Ï´Ù.
-mystd::ostream& endl(mystd::ostream& os)
-{
-	os << "\n";
-	return os;
-}
 
+	// endl ì€ ì•„ëž˜ ì²˜ëŸ¼ ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.
+	mystd::ostream& endl(mystd::ostream& os)
+	{
+		os << "\n";
+		return os;
+	}
+}
 mystd::ostream& tab(mystd::ostream& os)
 {
 	os << "\t";
 	return os;
 }
 
-
 int main()
 {
 	int n = 10;
+	mystd::cout << mystd::endl; // endl ì˜ ì •ì²´ëŠ” ë†€ëžê²Œë„ "í•¨ìˆ˜ ìž…ë‹ˆë‹¤"
+						// cout.operator<<( í•¨ìˆ˜í¬ì¸í„°) ì˜ ëª¨ì–‘ìž…ë‹ˆë‹¤.
+	mystd::endl( mystd::cout );   // ì´ ì½”ë“œê°€ ìœ„ ì½”ë“œì™€ ë™ì¼ í•©ë‹ˆë‹¤
 
-	mystd::cout << endl; // endl ÀÇ Á¤Ã¼´Â ³î¶ø°Ôµµ "ÇÔ¼ö ÀÔ´Ï´Ù"
-						// cout.operator<<( ÇÔ¼öÆ÷ÀÎÅÍ) ÀÇ ¸ð¾çÀÔ´Ï´Ù.
-	endl( mystd::cout );   // ÀÌ ÄÚµå°¡ À§ ÄÚµå¿Í µ¿ÀÏ ÇÕ´Ï´Ù
-
-	mystd::cout << "A" << tab << "B" << endl; // C++ Ç¥ÁØ¿¡ "tab"Àº ¾ø½À´Ï´Ù
-												// ¸¸µé¾î º¾½Ã´Ù.
+	mystd::cout << "A" << tab << "B" << mystd::endl; // C++ í‘œì¤€ì— "tab"ì€ ì—†ìŠµë‹ˆë‹¤
+												// ë§Œë“¤ì–´ ë´…ì‹œë‹¤.
+				// cout.operator<<(tab)
 }
 
 

@@ -1,27 +1,27 @@
 #include <iostream>
 
-// ºí·¢¹Ú½º Ä«¸Ş¶ó¸¦ ¹«Á¶°Ç ¸¸µéÁö ¸»°í..
-// ºí·¢¹Ú½º Á¦ÀÛÀÚ¿Í ÀÚµ¿Â÷ Á¦ÀÛÀÚ »çÀÌ¿¡ ÁöÄÑ¾ß ÇÏ´Â ±ÔÄ¢À» ¸ÕÀú ¼³°è ÇÑ´Ù.
-// ±ÔÄ¢ : ¸ğµç ºí·¢¹Ú½º´Â ¾Æ·¡ Å¬·¡½º·Î ºÎÅÍ ÆÄ»ıµÇ¾î¾ß ÇÑ´Ù.
-//        ==> ¹İµå½Ã ¾à¼ÓµÈ 2°³ÀÇ ÇÔ¼ö¸¦ ¸¸µé¶ó°í Áö½ÃÇÏ´Â °Í.
+// ë¸”ë™ë°•ìŠ¤ ì¹´ë©”ë¼ë¥¼ ë¬´ì¡°ê±´ ë§Œë“¤ì§€ ë§ê³ ..
+// ë¸”ë™ë°•ìŠ¤ ì œì‘ìì™€ ìë™ì°¨ ì œì‘ì ì‚¬ì´ì— ì§€ì¼œì•¼ í•˜ëŠ” ê·œì¹™ì„ ë¨¼ì € ì„¤ê³„ í•œë‹¤.
+// ê·œì¹™ : ëª¨ë“  ë¸”ë™ë°•ìŠ¤ëŠ” ì•„ë˜ í´ë˜ìŠ¤ë¡œ ë¶€í„° íŒŒìƒë˜ì–´ì•¼ í•œë‹¤.
+//        ==> ë°˜ë“œì‹œ ì•½ì†ëœ 2ê°œì˜ í•¨ìˆ˜ë¥¼ ë§Œë“¤ë¼ê³  ì§€ì‹œí•˜ëŠ” ê²ƒ.
 class IBlackBoxCamera
 {
 public:
 	virtual void startRecording() = 0;
 	virtual void stopRecording() = 0;
 };
-// ÁøÂ¥ Ä«¸Ş¶ó´Â ¾øÁö¸¸ "±ÔÄ¢ÀÌ ÀÖ´Ù."
-// Ä«¸Ş¶ó´Â »ç¿ëÇÏ´Â Å¬·¡½º¸¦ ¸ÕÀú ¸¸µé¼öµµ ÀÖ´Ù... ±ÔÄ¢´ë·Î¸¸ »ç¿ëÇÏ¸é µÈ´Ù.
+// ì§„ì§œ ì¹´ë©”ë¼ëŠ” ì—†ì§€ë§Œ "ê·œì¹™ì´ ìˆë‹¤."
+// ì¹´ë©”ë¼ëŠ” ì‚¬ìš©í•˜ëŠ” í´ë˜ìŠ¤ë¥¼ ë¨¼ì € ë§Œë“¤ìˆ˜ë„ ìˆë‹¤... ê·œì¹™ëŒ€ë¡œë§Œ ì‚¬ìš©í•˜ë©´ ëœë‹¤.
 class Car
 {
-	IBlackBoxCamera* pCamera; // Ãß»óÅ¬·¡½º °´Ã¼´Â ¸¸µé¼ö ¾øÁö¸¸, Æ÷ÀÎÅÍ´Â ¸¸µé¼ö ÀÖ½À´Ï´Ù.
+	IBlackBoxCamera* pCamera; // ì¶”ìƒí´ë˜ìŠ¤ ê°ì²´ëŠ” ë§Œë“¤ìˆ˜ ì—†ì§€ë§Œ, í¬ì¸í„°ëŠ” ë§Œë“¤ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 public:
 	void setCamera(IBlackBoxCamera* p) { pCamera = p; }
 	void start()                       { pCamera->startRecording(); }
 };
 
-// ÀÌÁ¦, ¸ğµç Ä«¸Ş¶ó ¸¦ ¸¸µé¶§´Â "IBlackBoxCamera" ·Î ºÎÅÍ ÆÄ»ı µÇ¾î¾ß ÇÑ´Ù´Â 
-// ±ÔÄ¢¸¸ ÁöÅ°¸é µË´Ï´Ù.
+// ì´ì œ, ëª¨ë“  ì¹´ë©”ë¼ ë¥¼ ë§Œë“¤ë•ŒëŠ” "IBlackBoxCamera" ë¡œ ë¶€í„° íŒŒìƒ ë˜ì–´ì•¼ í•œë‹¤ëŠ” 
+// ê·œì¹™ë§Œ ì§€í‚¤ë©´ ë©ë‹ˆë‹¤.
 
 class Camera : public IBlackBoxCamera
 {
@@ -29,12 +29,17 @@ public:
 	void startRecording() { std::cout << "start recording" << std::endl; }
 	void stopRecording() { std::cout << "stop recording" << std::endl; }
 };
-
 class HDCamera : public IBlackBoxCamera
 {
 public:
 	void startRecording() { std::cout << "start HD recording" << std::endl; }
 	void stopRecording() { std::cout << "stop HD recording" << std::endl; }
+};
+class UHDCamera : public IBlackBoxCamera
+{
+public:
+	void startRecording() { std::cout << "start UHD recording" << std::endl; }
+	void stopRecording() { std::cout << "stop UHD recording" << std::endl; }
 };
 int main()
 {
@@ -45,6 +50,11 @@ int main()
 
 	HDCamera hc;
 	c.setCamera(&hc); 
+	c.start();
+
+	UHDCamera uhc;
+	c.setCamera(&uhc); // Car í´ë˜ìŠ¤ì˜ ìˆ˜ì •ì—†ì´ ìƒˆë¡œìš´ ì–¸ì œë¼ë„ "ìƒˆë¡œìš´ ì¹´ë©”ë¼"ë¥¼ ë¶€ì°©í• ìˆ˜ ìˆë‹¤
+						// ë‹¨, "ê·œì¹™"ì„ ì§€í‚¤ëŠ” ì¹´ë©”ë¼ ì´ì–´ì•¼ í•œë‹¤.
 	c.start();
 }
 

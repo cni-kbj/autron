@@ -1,5 +1,5 @@
-// 1_namespace.cpp - 교재 7 page
 #include <stdio.h>
+// 1_namespace.cpp - 교재 7 page
 // namespace : 관련된 요소를 묶어서 관리할수 있고, 이름 충돌도 막을수 있다.
 namespace Audio
 {
@@ -12,12 +12,12 @@ namespace Video
 	void init() { printf("Video init\n"); }
 	
 	// 중첩될수 있습니다.
-	namespace 2D
+	/* namespace 2D
 	{
 	}
 	namespace 3D
 	{
-	}
+	} */
 }
 
 // global namesapce => 특정 이름공간에 포함되지 않은것!

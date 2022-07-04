@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <iostream>
 // 4_함수4
 // C++ 함수의 특징 4. 함수 템플릿
 
@@ -31,8 +33,11 @@ int main()
 	// 그런데, 아래 처럼 "타입 인자" 생략 가능합니다.
 	// 타입 인자 생략시 - 컴파일러가 함수 인자를 보고 타입인자를 추론합니다.
 	// "타입인자"와 "함수 인자"를 헷갈리지 마세요
-	square(3);
-	square(3.4);
+	int res = square(3);
+	printf("res = %d\n", res);
+	double res_f = square(3.4);
+	printf("res_f = %f\n", res_f);
+	std::cout << "res_f = " << res_f << std::endl;
 }
 
 // cl 4_함수4.cpp /FAs   로 어셈보면 함수가 실제로 2개 있습니다. int 버전과 double 버전.

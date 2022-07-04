@@ -21,6 +21,5 @@ int main()
 
 	// 그런데... 아래처럼 하면 어떻게 될까요 ?
 	std::cout << Add<double>(1, 2.2) << std::endl; // 문제 없습니다. T는 무조건 double
-	std::cout << Add(1, 2.2) << std::endl; /// ?????? error
+	// std::cout << Add(1, 2.2) << std::endl; /// ?????? error
 }
-

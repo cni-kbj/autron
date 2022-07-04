@@ -1,23 +1,23 @@
-// 5_ÇÔ¼öÅÛÇÃ¸´4.cpp
+// 5_í•¨ìˆ˜í…œí”Œë¦¿4.cpp
 #include <iostream>
 
-// Å¸ÀÔ "T" ¿¡´ëÇÑ ´Ù¾çÇÑ Æ¯¼ºÀ» Á¶»çÇÏ´Â ±â¼ú - "type traits" ¶ó°í ÇÕ´Ï´Ù.
+// íƒ€ì… "T" ì—ëŒ€í•œ ë‹¤ì–‘í•œ íŠ¹ì„±ì„ ì¡°ì‚¬í•˜ëŠ” ê¸°ìˆ  - "type traits" ë¼ê³  í•©ë‹ˆë‹¤.
 #include <type_traits>
 
 template<typename T> void foo(T a)
 {
-	// T ÀÇ Å¸ÀÔ¿¡ µû¶ó ´Ù¸¥ ¾Ë°í¸®ÁòÀ» ÀÛ¼ºÇÏ°í ½Í´Ù.
+	// T ì˜ íƒ€ì…ì— ë”°ë¼ ë‹¤ë¥¸ ì•Œê³ ë¦¬ì¦˜ì„ ì‘ì„±í•˜ê³  ì‹¶ë‹¤.
 	if (std::is_same<T, int>::value)
-		std::cout << "T ´Â int" << std::endl;
+		std::cout << "T is int" << std::endl;
 
 	else if (std::is_same<T, double>::value)
-		std::cout << "T ´Â double" << std::endl;
+		std::cout << "T is double" << std::endl;
 
-	if (std::is_integral<T>::value) //Á¤¼ö °è¿­ÀÎ°¡ ???
-		std::cout << "Á¤¼ö °è¿­" << std::endl;
+	if (std::is_integral<T>::value) //ì •ìˆ˜ ê³„ì—´ì¸ê°€ ???
+		std::cout << "type of integer" << std::endl;
 
-	if (std::is_pointer<T>::value) // Æ÷ÀÎÅÍ ÀÎ°¡
-		std::cout << "Æ÷ÀÎÅÍ" << std::endl;
+	if (std::is_pointer<T>::value) // í¬ì¸í„° ì¸ê°€
+		std::cout << "type of pointer" << std::endl;
 }
 
 int main()

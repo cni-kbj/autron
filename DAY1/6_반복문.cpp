@@ -16,6 +16,4 @@ int main()
 	{				  // begin()/end()라는 약속된 이름의 함수가 필요 합니다. - 마지막날
 		std::cout << n << std::endl;
 	}
-
-
 }

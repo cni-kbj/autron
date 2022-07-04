@@ -1,14 +1,14 @@
-// 5_Ä³½ºÆÃ6.cpp
+// 5_ìºìŠ¤íŒ…6.cpp
 #include <iostream>
 
 bool is_little_endian()
 {
 	int n = 0x11223344;
 
-	// endian Å¸ÀÔÀ» Á¶»çÇÏ·Á¸é
-	// int º¯¼öÀÇ Á¦ÀÏ ¾Õ ÇÑ ¹ÙÀÌÆ®¸¸ ²¨³»¾ßÇÕ´Ï´Ù.
-//	char* p = (char*)&n; // C ½ºÅ¸ÀÏ.
-//	char* p = static_cast<char*>(&n); // error.
+	// endian íƒ€ì…ì„ ì¡°ì‚¬í•˜ë ¤ë©´
+	// int ë³€ìˆ˜ì˜ ì œì¼ ì• í•œ ë°”ì´íŠ¸ë§Œ êº¼ë‚´ì•¼í•©ë‹ˆë‹¤.
+	// char* p = (char*)&n; // C ìŠ¤íƒ€ì¼.
+	// char* p = static_cast<char*>(&n); // error.
 	char* p = reinterpret_cast<char*>(&n); // ok.
 
 	if (*p == 0x44)
@@ -20,6 +20,8 @@ bool is_little_endian()
 int main()
 {
 	bool b = is_little_endian();
-
-	std::cout << b << std::endl;
+	if (b == true)
+		std::cout << "true" << std::endl;
+	else
+		std::cout << "false" << std::endl;
 }

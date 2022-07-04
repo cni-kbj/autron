@@ -10,7 +10,7 @@ int main()
 	// int* => double*
 //	double* p1 = (double*)&n; // ok.. 그런데.. 너무 위험하다.
 
-	double* p2 = static_cast<double*>(&n); // error. 논리적으로 맞지않다.
+	// double* p2 = static_cast<double*>(&n); // error. 논리적으로 맞지않다.
 											// 혹시, 실수 아닌가 ?
 	// 위험한지 아는데.. 그래도 필요하다.(다양한 이유로)
 	double* p3 = reinterpret_cast<double*>(&n); // ok.. 서로 다른 타입의 주소 캐스팅
